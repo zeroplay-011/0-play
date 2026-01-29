@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ZEROPLAY - Free gaming account sharing platform. Access premium PC game accounts instantly. 100% free, no payment, no downloads. Instant access to popular games.">
+    <meta name="keywords" content="free gaming accounts, game account sharing, free PC games, instant game access, ZEROPLAY, gaming platform">
+    <meta property="og:title" content="ZEROPLAY - Free Gaming Account Access">
+    <meta property="og:description" content="Access premium gaming accounts completely free. Instant access, no registration required.">
+    <meta property="og:url" content="https://zeroplay.site">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://zeroplay.site">
+    <title>ZEROPLAY - Free Gaming Account Sharing | Instant Access to Premium Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary: #ec4899;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --dark: #0a0a0a;
+            --dark-light: #1a1a1a;
+            --dark-lighter: #2a2a2a;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--dark);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #aaa;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Ad Space - Multiple Positions */
+        .ad-space {
+            background: linear-gradient(135deg, var(--dark-light) 0%, var(--dark-lighter) 100%);
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 1400px;
+            border-radius: 16px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .ad-space::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            border-radius: 16px;
+            z-index: -1;
+            animation: borderRotate 3s linear infinite;
+            background-size: 300% 300%;
+        }
+
+        @keyframes borderRotate {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .ad-space.large {
+            min-height: 280px;
+        }
+
+        .ad-space p {
+            color: #888;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Search Section */
+        .search-container {
+            margin: 3rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1.2rem 3rem 1.2rem 1.5rem;
+            background: var(--dark-light);
+            border: 2px solid var(--dark-lighter);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2), 0 4px 20px rgba(139, 92, 246, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .search-box::after {
+            content: '🔍';
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem auto;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--dark-light);
+            border: 2px solid var(--dark-lighter);
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--dark-light), var(--dark-lighter));
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid var(--dark-lighter);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            animation: pulse 3s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin: 4rem auto 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Games Grid */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-card {
+            background: var(--dark-light);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid var(--dark-lighter);
+            position: relative;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .game-card:hover::before {
+            left: 100%;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(139, 92, 246, 0.5);
+            border-color: var(--primary);
+        }
+
+        .game-image-container {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--dark-lighter), var(--dark-light));
+        }
+
+        .game-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: brightness(0.9);
+        }
+
+        .game-card:hover .game-image {
+            transform: scale(1.15) rotate(2deg);
+            filter: brightness(1.1);
+        }
+
+        .game-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .game-info {
+            padding: 1.5rem;
+            background: linear-gradient(180deg, var(--dark-light) 0%, var(--dark) 100%);
+        }
+
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: #fff;
+            background: linear-gradient(135deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .game-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-tag {
+            background: var(--dark-lighter);
+            color: #888;
+            padding: 0.4rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            border: 1px solid var(--dark-lighter);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+            position: relative;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Interstitial Ad Modal */
+        .ad-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s;
+        }
+
+        .ad-modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .ad-modal-content {
+            background: var(--dark-light);
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            border: 3px solid var(--primary);
+            position: relative;
+            animation: slideUp 0.4s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .ad-modal-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .ad-modal-header h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ad-modal-body {
+            background: var(--dark);
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--dark-lighter);
+        }
+
+        .ad-skip-timer {
+            margin-top: 1.5rem;
+            text-align: center;
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        .ad-skip-btn {
+            display: none;
+            margin: 1.5rem auto 0;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--success), var(--accent));
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .ad-skip-btn.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        .ad-skip-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Features Section */
+        .features-section {
+            margin: 5rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, var(--dark-light), var(--dark-lighter));
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid var(--dark-lighter);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, var(--primary), transparent);
+            animation: rotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 4px 10px rgba(139, 92, 246, 0.5));
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feature-desc {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-light);
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+            border-top: 3px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+            background-size: 200% 100%;
+            animation: gradientMove 3s linear infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #888;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark-lighter);
+            color: #666;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--dark-lighter);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: 2px solid var(--dark-lighter);
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            grid-column: 1 / -1;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--dark-lighter);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #888;
+            font-size: 1.3rem;
+            grid-column: 1 / -1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">ZEROPLAY</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Free Gaming Account Sharing</h1>
+        <p>Access premium gaming accounts completely free. Instant access. No registration required.</p>
+    </div>
+
+    <!-- Important Banner -->
+    <div class="container">
+        <div style="background: linear-gradient(135deg, #ec4899, #f59e0b); padding: 1.5rem; border-radius: 16px; text-align: center; margin-bottom: 2rem; animation: fadeInUp 1s ease;">
+            <h3 style="margin-bottom: 0.5rem; font-size: 1.3rem;">⚠️ IMPORTANT NOTICE</h3>
+            <p style="font-size: 1.1rem; margin: 0;">ZEROPLAY is 100% FREE. We NEVER ask for payment or financial information. Beware of scams!</p>
+        </div>
+    </div>
+
+    <!-- Top Ad Space -->
+    <div class="ad-space large">
+        <p>🎮 Advertisement Space - 728x90 Leaderboard</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- Ad Space - Banner -->
+    <div class="ad-space">
+        <p>💰 Advertisement Space - 468x60 Banner</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- Stats Section -->
+    <div class="container">
+        <div class="stats-section fade-in">
+            <div class="stat-card">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Active Users</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Premium Games</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Secure</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Space 2 -->
+    <div class="ad-space">
+        <p>💰 Advertisement Space - 728x90</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- Ad Space - Square -->
+    <div class="ad-space" style="min-height: 280px;">
+        <p>📢 Advertisement Space - 300x250 Medium Rectangle</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- Search Section -->
+    <div class="container" id="games">
+        <div class="section-title fade-in">
+            <h2>Browse Game Accounts</h2>
+        </div>
+
+        <div class="search-container fade-in">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search for your favorite game...">
+            </div>
+        </div>
+
+        <div class="filter-buttons fade-in">
+            <button class="filter-btn active" data-filter="all">All Games</button>
+            <button class="filter-btn" data-filter="action">Action</button>
+            <button class="filter-btn" data-filter="rpg">RPG</button>
+            <button class="filter-btn" data-filter="shooter">Shooter</button>
+            <button class="filter-btn" data-filter="adventure">Adventure</button>
+        </div>
+
+        <!-- Games Grid -->
+        <div class="games-grid" id="gamesGrid">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading amazing games...</p>
+            </div>
+        </div>
+
+        <!-- Ad Space - Between Games Section 1 -->
+        <div class="ad-space">
+            <p>🎯 Advertisement Space - 728x90</p>
+            <!-- ADSTERRA AD CODE HERE -->
+        </div>
+    </div>
+
+    <!-- Ad Space 3 - Large Billboard -->
+    <div class="ad-space large">
+        <p>🚀 Advertisement Space - 970x250 Billboard</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- Ad Space - Native -->
+    <div class="ad-space">
+        <p>📱 Advertisement Space - Native Ad</p>
+        <!-- ADSTERRA NATIVE AD CODE HERE -->
+    </div>
+
+    <!-- Ad Space 4 -->
+    <div class="ad-space">
+        <p>🎪 Advertisement Space - 728x90</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- How It Works Section -->
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>How ZEROPLAY Works</h2>
+        </div>
+        <div class="features-section">
+            <div class="feature-card fade-in">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--primary); margin-bottom: 1rem;">1</div>
+                <div class="feature-title">Browse Games</div>
+                <div class="feature-desc">Explore our extensive collection of premium gaming accounts across all popular titles.</div>
+            </div>
+            <div class="feature-card fade-in">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--secondary); margin-bottom: 1rem;">2</div>
+                <div class="feature-title">Click Get Account</div>
+                <div class="feature-desc">Simply click the button on your chosen game to access the account details instantly.</div>
+            </div>
+            <div class="feature-card fade-in">
+                <div style="font-size: 3rem; font-weight: bold; color: var(--accent); margin-bottom: 1rem;">3</div>
+                <div class="feature-title">Start Playing</div>
+                <div class="feature-desc">Login with provided credentials and enjoy your favorite games immediately!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Space 5 -->
+    <div class="ad-space large">
+        <p>💎 Advertisement Space - 970x90 Large Leaderboard</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- Popular Categories Section -->
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>Popular Game Categories</h2>
+        </div>
+        <div class="stats-section fade-in">
+            <div class="stat-card" style="cursor: pointer;" onclick="document.querySelector('[data-filter=action]').click();">
+                <div class="stat-icon" style="font-size: 3rem;">🎮</div>
+                <div class="stat-label">Action Games</div>
+            </div>
+            <div class="stat-card" style="cursor: pointer;" onclick="document.querySelector('[data-filter=rpg]').click();">
+                <div class="stat-icon" style="font-size: 3rem;">⚔️</div>
+                <div class="stat-label">RPG Games</div>
+            </div>
+            <div class="stat-card" style="cursor: pointer;" onclick="document.querySelector('[data-filter=shooter]').click();">
+                <div class="stat-icon" style="font-size: 3rem;">🔫</div>
+                <div class="stat-label">Shooter Games</div>
+            </div>
+            <div class="stat-card" style="cursor: pointer;" onclick="document.querySelector('[data-filter=adventure]').click();">
+                <div class="stat-icon" style="font-size: 3rem;">🗺️</div>
+                <div class="stat-label">Adventure Games</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Space 6 - Square -->
+    <div class="ad-space" style="min-height: 280px;">
+        <p>📢 Advertisement Space - 300x250 Medium Rectangle</p>
+        <!-- ADSTERRA AD CODE HERE -->
+    </div>
+
+    <!-- Features Section -->
+    <div class="container" id="features">
+        <div class="section-title fade-in">
+            <h2>Why Choose ZEROPLAY?</h2>
+        </div>
+
+        <div class="features-section">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-title">100% Secure</div>
+                <div class="feature-desc">All accounts are verified and secure. Your safety is our priority.</div>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Instant Access</div>
+                <div class="feature-desc">Get immediate access to your game accounts. Start playing right away!</div>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">🎮</div>
+                <div class="feature-title">Premium Quality</div>
+                <div class="feature-desc">Only the best game accounts with all DLCs and achievements.</div>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">💬</div>
+                <div class="feature-title">24/7 Support</div>
+                <div class="feature-desc">Our team is always here to help you with any questions or issues.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Space 4 -->
+    <div class="ad-space large">
+        <p>🚀 Advertisement Space - 970x250 Billboard</p>
+        <!-- PASTE YOUR AD CODE HERE -->
+    </div>
+
+    <!-- About Section -->
+    <div class="container" id="about">
+        <div class="section-title fade-in">
+            <h2>About ZEROPLAY</h2>
+        </div>
+        <div class="about-section fade-in">
+            <p style="color: #ccc; font-size: 1.2rem; line-height: 1.8; text-align: center; max-width: 900px; margin: 0 auto;">
+                ZEROPLAY is a free family and friend account sharing platform for PC gamers. We facilitate account sharing among trusted communities, allowing multiple users to enjoy premium gaming experiences. Our platform is 100% free, requires no payment, and focuses solely on connecting gamers who want to share their game libraries with family and friends.
+            </p>
+        </div>
+    </div>
+
+    <!-- Important Notice Section -->
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>⚠️ Important Information</h2>
+        </div>
+        <div class="features-section">
+            <div class="feature-card fade-in" style="text-align: left;">
+                <div class="feature-icon">🆓</div>
+                <div class="feature-title">100% Free Service</div>
+                <div class="feature-desc">ZEROPLAY is completely free. We never ask for payment, credit card information, or any financial data. Beware of scams claiming to represent us.</div>
+            </div>
+            <div class="feature-card fade-in">
+                <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                <div class="feature-title">Instant Access Gaming</div>
+                <div class="feature-desc">Get immediate access to premium gaming accounts. No waiting, no registration forms, no complicated processes.</div>
+            </div>
+            <div class="feature-card fade-in" style="text-align: left;">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">No Downloads Required</div>
+                <div class="feature-desc">We do not provide any downloadable files, software, or applications. This website contains no viruses, malware, or harmful content.</div>
+            </div>
+            <div class="feature-card fade-in" style="text-align: left;">
+                <div class="feature-icon">🔐</div>
+                <div class="feature-title">No Personal Data Collection</div>
+                <div class="feature-desc">We do not collect, store, or request any personal information, passwords, or financial details. Your privacy is our priority.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Space 5 -->
+    <div class="ad-space">
+        <p>🎪 Advertisement Space - 728x90</p>
+        <!-- PASTE YOUR AD CODE HERE -->
+    </div>
+
+    <!-- Interstitial Ad Modal -->
+    <div class="ad-modal" id="adModal">
+        <div class="ad-modal-content">
+            <div class="ad-modal-header">
+                <p style="color: #888;">Advertisement</p>
+            </div>
+            <div class="ad-modal-body">
+                <p style="color: var(--primary); font-size: 1.2rem; font-weight: 600;">
+                    📢 Advertisement - Please wait...
+                </p>
+                <!-- ADSTERRA INTERSTITIAL AD CODE HERE -->
+                <!-- For Adsterra Popunder: Add script in head section -->
+            </div>
+            <div class="ad-skip-timer" id="skipTimer">
+                Please wait <span id="countdown">5</span> seconds...
+            </div>
+            <button class="ad-skip-btn" id="skipBtn" onclick="closeAdAndProceed()">
+                ✓ Continue to Game Account
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ZEROPLAY</h3>
+                <p>Free gaming account sharing platform. Access premium PC games instantly. 100% free, no payment required, no downloads.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/zeroplay46" target="_blank" class="social-link" title="Follow us on Instagram">📷</a>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Instagram: @zeroplay46</p>
+            </div>
+            <div class="footer-section">
+                <h3>Important Links</h3>
+                <a href="#terms">Terms of Service</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#disclaimer">Disclaimer</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Info</h3>
+                <a href="#about">About Us</a>
+                <a href="#games">Browse Games</a>
+                <a href="#features">Our Features</a>
+                <a href="https://instagram.com/zeroplay46" target="_blank">Instagram</a>
+            </div>
+            <div class="footer-section">
+                <h3>Legal Notice</h3>
+                <p>✓ 100% Free Service</p>
+                <p>✓ No Payment Required</p>
+                <p>✓ No Downloads</p>
+                <p>✓ Family Sharing Only</p>
+            </div>
+        </div>
+
+        <!-- Ad Space in Footer -->
+        <div class="ad-space" style="margin-top: 3rem;">
+            <p>🎯 Advertisement Space - 728x90</p>
+            <!-- ADSTERRA AD CODE HERE -->
+        </div>
+
+        <!-- Ad Space - Additional Footer Ad -->
+        <div class="ad-space" style="margin-top: 1.5rem; min-height: 280px;">
+            <p>📢 Advertisement Space - 300x250 Medium Rectangle</p>
+            <!-- ADSTERRA AD CODE HERE -->
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 ZEROPLAY.SITE - Free Gaming Account Sharing Platform | All Rights Reserved</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Made with ❤️ for the gaming community | Contact: Instagram @zeroplay46</p>
+        </div>
+    </footer>
+
+    <!-- Terms of Service Modal -->
+    <div class="ad-modal" id="termsModal">
+        <div class="ad-modal-content" style="max-width: 900px; max-height: 80vh; overflow-y: auto;">
+            <div class="ad-modal-header">
+                <h3>📜 Terms of Service</h3>
+                <button onclick="closeModal('termsModal')" style="background: var(--dark-lighter); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600;">✕ Close</button>
+            </div>
+            <div class="ad-modal-body" style="text-align: left; background: var(--dark-lighter); padding: 2rem; min-height: auto;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">Effective Date: January 29, 2026</h4>
+                
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. Acceptance of Terms</h4>
+                <p style="color: #ccc; line-height: 1.8;">By accessing and using ZEROPLAY.SITE ("the Website"), you agree to comply with and be bound by these Terms of Service. If you do not agree to these terms, please do not use this website.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. Service Description</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY is a free platform that provides access to shared gaming accounts for PC games. We connect users with available gaming accounts for personal, non-commercial use.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">3. Free Service - No Payment Required</h4>
+                <p style="color: #ccc; line-height: 1.8;"><strong>IMPORTANT:</strong> ZEROPLAY is 100% FREE. We will NEVER:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Request any form of payment</li>
+                    <li>Ask for credit card or banking information</li>
+                    <li>Collect financial data of any kind</li>
+                    <li>Require subscriptions or membership fees</li>
+                </ul>
+                <p style="color: #ec4899; margin-top: 1rem; font-weight: 600;">⚠️ If anyone claims to represent ZEROPLAY and requests payment, it is a SCAM. Report it immediately.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">4. Responsible Use of Shared Accounts</h4>
+                <p style="color: #ccc; line-height: 1.8;">This platform provides access to shared gaming accounts. Users agree to:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Use accounts for personal gaming purposes only</li>
+                    <li>Not engage in commercial resale or distribution</li>
+                    <li>Use accounts responsibly and ethically</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">5. No Downloads or Software</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY does NOT provide:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Any downloadable files or software</li>
+                    <li>Game installations or executables</li>
+                    <li>Patches, mods, or modifications</li>
+                    <li>Any content that requires downloading</li>
+                </ul>
+                <p style="color: #ccc; line-height: 1.8; margin-top: 1rem;">This website contains NO viruses, malware, trojans, or harmful content. We only provide account access links.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">6. User Responsibilities</h4>
+                <p style="color: #ccc; line-height: 1.8;">By using ZEROPLAY, you agree to:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Use shared accounts responsibly and ethically</li>
+                    <li>Respect game publishers' terms of service</li>
+                    <li>Not engage in cheating, hacking, or exploiting</li>
+                    <li>Keep account credentials secure and private</li>
+                    <li>Not change passwords or account details without permission</li>
+                    <li>Not use accounts for commercial purposes</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">7. Account Sharing Disclaimer</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY acts only as a facilitator. We do not:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Own or control the shared accounts</li>
+                    <li>Guarantee account availability or functionality</li>
+                    <li>Take responsibility for account suspensions or bans</li>
+                    <li>Store or manage account credentials</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">8. Third-Party Services</h4>
+                <p style="color: #ccc; line-height: 1.8;">When accessing external links (game platforms, account providers), you are subject to their respective terms of service and privacy policies. ZEROPLAY is not responsible for third-party services.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">9. Intellectual Property</h4>
+                <p style="color: #ccc; line-height: 1.8;">All game names, logos, and trademarks are property of their respective owners. ZEROPLAY does not claim ownership of any game-related intellectual property.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">10. Limitation of Liability</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY is provided "AS IS" without warranties. We are not liable for:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Account suspensions or terminations</li>
+                    <li>Loss of game progress or data</li>
+                    <li>Disputes between account sharers</li>
+                    <li>Any damages arising from website use</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">11. Advertising</h4>
+                <p style="color: #ccc; line-height: 1.8;">This website displays third-party advertisements to support free operations. We are not responsible for advertiser content or practices.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">12. Termination</h4>
+                <p style="color: #ccc; line-height: 1.8;">We reserve the right to terminate or suspend access to our service immediately, without prior notice, for any violation of these Terms.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">13. Changes to Terms</h4>
+                <p style="color: #ccc; line-height: 1.8;">We may modify these Terms at any time. Continued use of the website after changes constitutes acceptance of modified terms.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">14. Contact Information</h4>
+                <p style="color: #ccc; line-height: 1.8;">For questions or concerns, contact us via Instagram: <strong>@zeroplay46</strong></p>
+
+                <p style="color: var(--accent); margin-top: 2rem; font-weight: 600; text-align: center;">By using ZEROPLAY.SITE, you acknowledge that you have read, understood, and agree to these Terms of Service.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="ad-modal" id="privacyModal">
+        <div class="ad-modal-content" style="max-width: 900px; max-height: 80vh; overflow-y: auto;">
+            <div class="ad-modal-header">
+                <h3>🔒 Privacy Policy</h3>
+                <button onclick="closeModal('privacyModal')" style="background: var(--dark-lighter); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600;">✕ Close</button>
+            </div>
+            <div class="ad-modal-body" style="text-align: left; background: var(--dark-lighter); padding: 2rem; min-height: auto;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem;">Effective Date: January 29, 2026</h4>
+                
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. Information We DO NOT Collect</h4>
+                <p style="color: #ccc; line-height: 1.8;"><strong>ZEROPLAY practices a NO DATA COLLECTION policy.</strong> We do NOT collect, store, or process:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Personal identification information (name, email, address)</li>
+                    <li>Financial information (credit cards, bank accounts, payment details)</li>
+                    <li>Account credentials or passwords</li>
+                    <li>Login information for gaming platforms</li>
+                    <li>Phone numbers or contact details</li>
+                    <li>Social security numbers or government IDs</li>
+                </ul>
+                <p style="color: #10b981; margin-top: 1rem; font-weight: 600;">✓ Your privacy is 100% protected because we collect ZERO personal data.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. Automatic Information</h4>
+                <p style="color: #ccc; line-height: 1.8;">Like most websites, our hosting provider may automatically collect:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Browser type and version</li>
+                    <li>Operating system</li>
+                    <li>IP address (anonymized)</li>
+                    <li>Page visit timestamps</li>
+                </ul>
+                <p style="color: #ccc; line-height: 1.8; margin-top: 1rem;">This data is used solely for analytics and cannot identify you personally.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">3. Cookies</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY may use minimal cookies for:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Remembering your preferences</li>
+                    <li>Analytics (via third-party services like Google Analytics)</li>
+                    <li>Advertising (via ad networks)</li>
+                </ul>
+                <p style="color: #ccc; line-height: 1.8; margin-top: 1rem;">You can disable cookies in your browser settings. This may affect website functionality.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">4. Third-Party Services</h4>
+                <p style="color: #ccc; line-height: 1.8;"><strong>Advertising Networks:</strong> We display ads from third-party networks. These networks may use cookies and tracking technologies. We do not control their data practices. Review their privacy policies:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Google AdSense - google.com/adsense</li>
+                    <li>Other ad networks as applicable</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">5. External Links</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY contains links to external websites (gaming platforms, account providers). We are NOT responsible for the privacy practices of these external sites. Use caution and review their privacy policies.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">6. Children's Privacy</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY does not knowingly collect information from children under 13. If you are under 13, please use this website only with parental supervision.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">7. Data Security</h4>
+                <p style="color: #ccc; line-height: 1.8;">Since we collect NO personal data, there is no risk of data breaches involving your information. However, we use industry-standard security measures to protect our website infrastructure.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">8. No Sale of Data</h4>
+                <p style="color: #ccc; line-height: 1.8;"><strong>We do NOT sell, trade, or transfer any user data</strong> because we don't collect any user data to begin with.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">9. Your Rights</h4>
+                <p style="color: #ccc; line-height: 1.8;">Since we collect no personal data, there is no data to:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Access, correct, or delete</li>
+                    <li>Port or transfer</li>
+                    <li>Object to processing</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">10. Changes to Privacy Policy</h4>
+                <p style="color: #ccc; line-height: 1.8;">We may update this Privacy Policy periodically. Changes will be posted on this page with an updated effective date.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">11. Contact</h4>
+                <p style="color: #ccc; line-height: 1.8;">For privacy-related questions, contact us via Instagram: <strong>@zeroplay46</strong></p>
+
+                <p style="color: var(--success); margin-top: 2rem; font-weight: 600; text-align: center;">Your privacy is our priority. We collect ZERO personal data, ensuring your complete anonymity.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disclaimer Modal -->
+    <div class="ad-modal" id="disclaimerModal">
+        <div class="ad-modal-content" style="max-width: 900px; max-height: 80vh; overflow-y: auto;">
+            <div class="ad-modal-header">
+                <h3>⚠️ Legal Disclaimer</h3>
+                <button onclick="closeModal('disclaimerModal')" style="background: var(--dark-lighter); color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600;">✕ Close</button>
+            </div>
+            <div class="ad-modal-body" style="text-align: left; background: var(--dark-lighter); padding: 2rem; min-height: auto;">
+                
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">1. General Disclaimer</h4>
+                <p style="color: #ccc; line-height: 1.8;">The information and services provided on ZEROPLAY.SITE are for informational and entertainment purposes only. Use of this website is at your own risk.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">2. No Warranties</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY is provided "AS IS" and "AS AVAILABLE" without any warranties of any kind, either express or implied, including but not limited to:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Account availability or functionality</li>
+                    <li>Uninterrupted or error-free service</li>
+                    <li>Accuracy or reliability of information</li>
+                    <li>Fitness for a particular purpose</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">3. Account Sharing Risks</h4>
+                <p style="color: #ccc; line-height: 1.8;">Users acknowledge that sharing game accounts may:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Violate terms of service of gaming platforms</li>
+                    <li>Result in account suspension or termination</li>
+                    <li>Lead to loss of game progress or purchases</li>
+                    <li>Expose accounts to unauthorized access</li>
+                </ul>
+                <p style="color: #ec4899; margin-top: 1rem; font-weight: 600;">⚠️ ZEROPLAY is not responsible for any consequences resulting from account sharing.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">4. No Virus or Malware</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY.SITE does not contain, distribute, or facilitate the download of:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Viruses, trojans, or malware</li>
+                    <li>Spyware or adware</li>
+                    <li>Harmful or malicious code</li>
+                    <li>Downloadable files or software</li>
+                </ul>
+                <p style="color: #ccc; line-height: 1.8; margin-top: 1rem;">However, external links may lead to third-party sites. We are not responsible for their content or security.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">5. Third-Party Content</h4>
+                <p style="color: #ccc; line-height: 1.8;">ZEROPLAY may contain links to third-party websites, services, or content. We do not endorse, control, or assume responsibility for any third-party content.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">6. Limitation of Liability</h4>
+                <p style="color: #ccc; line-height: 1.8;">To the fullest extent permitted by law, ZEROPLAY and its operators shall not be liable for:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Any direct, indirect, incidental, or consequential damages</li>
+                    <li>Loss of data, profits, or business opportunities</li>
+                    <li>Account suspensions, bans, or terminations</li>
+                    <li>Disputes between users sharing accounts</li>
+                    <li>Any damages arising from website use or inability to use</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">7. User Responsibility</h4>
+                <p style="color: #ccc; line-height: 1.8;">Users are solely responsible for:</p>
+                <ul style="color: #ccc; line-height: 1.8; margin-left: 2rem; margin-top: 0.5rem;">
+                    <li>Compliance with all applicable laws and regulations</li>
+                    <li>Respecting game publishers' terms of service</li>
+                    <li>Maintaining security of shared accounts</li>
+                    <li>Any consequences of account sharing</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">8. No Professional Advice</h4>
+                <p style="color: #ccc; line-height: 1.8;">Content on ZEROPLAY does not constitute professional advice (legal, financial, technical, or otherwise). Consult qualified professionals for specific advice.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">9. Jurisdiction</h4>
+                <p style="color: #ccc; line-height: 1.8;">Users are responsible for compliance with laws in their jurisdiction. ZEROPLAY makes no representation that content is appropriate or legal in all locations.</p>
+
+                <h4 style="color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">10. Changes to Disclaimer</h4>
+                <p style="color: #ccc; line-height: 1.8;">We reserve the right to modify this disclaimer at any time without prior notice.</p>
+
+                <p style="color: var(--accent); margin-top: 2rem; font-weight: 600; text-align: center;">BY USING ZEROPLAY.SITE, YOU ACKNOWLEDGE AND ACCEPT ALL RISKS AND DISCLAIMERS STATED HEREIN.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // MODAL FUNCTIONS
+        // ========================================
+        
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Add click handlers for footer links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Terms link
+            document.querySelectorAll('a[href="#terms"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal('termsModal');
+                });
+            });
+
+            // Privacy link
+            document.querySelectorAll('a[href="#privacy"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal('privacyModal');
+                });
+            });
+
+            // Disclaimer link
+            document.querySelectorAll('a[href="#disclaimer"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal('disclaimerModal');
+                });
+            });
+
+            // Close modals when clicking outside
+            document.querySelectorAll('.ad-modal').forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            });
+        });
+
+        // GAMES DATABASE
+        
+        const games = [
+            {
+                id: 1,
+                title: "The Last of Us Part II Remastered",
+                image: "https://image.api.playstation.com/vulcan/ap/rnd/202312/0117/315718bce7eed62e3cf3fb02d61b81ff1782d6b6cf850fa4.png",
+                accountLink: "https://cuty.io/rhC9kQdS",
+                category: "Survival",
+                badge: "Popular"
+            },
+            {
+                id: 2,
+                title: "The Last of Us Part I",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr-YUU4oipkxpn-PWgQV13G6cOekaniKEkKg&s",
+                accountLink: "https://cuty.io/WRFwQHVuD4",
+                category: "Survival",
+                badge: "Trending"
+            },
+            {
+                id: 3,
+                title: "Counter-Strike 2",
+                image: "https://sm.ign.com/t/ign_in/cover/c/counter-st/counter-strike-2_jjgf.1200.jpg",
+                accountLink: "https://cuty.io/vSis86JA3U6F",
+                category: "shooter",
+                badge: "New"
+            },
+            {
+                id: 4,
+                title: "Grand Theft Auto: Vice City",
+                image: "https://upload.wikimedia.org/wikipedia/en/c/ce/Vice-city-cover.jpg",
+                accountLink: "https://cuty.io/MYsqKQC2rZaW",
+                category: "open-world",
+                badge: "Hot"
+            },
+            {
+                id: 5,
+                title: "Doom 2016",
+                image: "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Doom_Cover.jpg/250px-Doom_Cover.jpg",
+                accountLink: "https://cuty.io/UagU",
+                category: "shooter",
+                badge: "Popular"
+            },
+            {
+                id: 6,
+                title: "Killing Floor 3",
+                image: "https://i.gadgets360cdn.com/products/large/EGS-KillingFloor3-TripwireInteractive-S2-1200x1600-026755706981418b376af9476af8eada-1000x1333-1710919086.jpeg",
+                accountLink: "https://cuty.io/buKVwa",
+                category: "action",
+                badge: "Featured"
+            },
+            {
+                id: 7,
+                title: "Crab Game",
+                image: "https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/crab_game_image.jpg",
+                accountLink: "https://cuty.io/GKFx1Ph",
+                category: "FPS ",
+                badge: "Classic"
+            },
+            {
+                id: 8,
+                title: "Hunt: Showdown",
+                image: "https://upload.wikimedia.org/wikipedia/en/a/a5/Hunt_Showdown_cover_art.png",
+                accountLink: "https://cuty.io/du2k7",
+                category: "shooter",
+                badge: "Classic"
+            },
+            {
+                id: 9,
+                title: "Horizon Zero Dawn: Complete Edition",
+                image: "https://savekeys.net/wp-content/uploads/2020/08/horizon-zero-dawn-complete-cover.jpg",
+                accountLink: "https://cuty.io/j9eIHEMOqaa",
+                category: "action",
+                badge: "Trending"
+            },
+            {
+                id: 10,
+                title: "Stellar Blade",
+                image: "https://image.api.playstation.com/vulcan/ap/rnd/202401/2211/40e7cfd126a11fe5118310ebce6d9b3a23e7cabaca717217.png",
+                accountLink: "https://cuty.io/7ZLZi2B",
+                category: "adventure",
+                badge: "New"
+            },
+            {
+                id: 11,
+                title: "Metro 2033",
+                image: "https://image.api.playstation.com/cdn/UP2047/CUSA00623_00/13WYQda0tBRPq1UkrCmqA3Y4zVMDUlPf.png?w=440",
+                accountLink: "https://cuty.io/mQnKT3IfY",
+                category: "Survival",
+            },
+            {
+                id: 12,
+                title: "Residence Of Evil 2",
+                image: "https://assets1.ignimgs.com/2018/11/30/resident-evil-2-remake---button-fin-1543614996402.jpg",
+                accountLink: "https://cuty.io/EKumzxQepA4",
+                category: "Horror",
+            },
+            {
+                id: 13,
+                title: "Aimlabs",
+                image: "https://m.media-amazon.com/images/M/MV5BOWJiODc1ZTUtMmUwZS00ZjAyLTljMWQtNGI2M2Y3YTc5NzRjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+                accountLink: "https://cuty.io/vGFmhUBHKP",
+                category: "shooter",
+            },
+            {
+                id: 14,
+                title: "War Thunder",
+                image: "https://store-images.s-microsoft.com/image/apps.44930.63381296256995371.c146102b-90d3-4b86-a6d7-d80fd315b526.314df842-7048-4754-afa0-93e2edee6928",
+                accountLink: "https://cuty.io/NsEorJc08j",
+                category: "action",
+            },
+            {
+                id: 15,
+                title: "Monster Hunter Rise",
+                image: "https://upload.wikimedia.org/wikipedia/en/4/41/Monster_hunter_rise_cover.jpg",
+                accountLink: "https://cuty.io/IYLqt9n",
+                category: "Action"
+            },
+            {
+                id: 16,
+                title: "Rise of the Rōnin",
+                image: "https://upload.wikimedia.org/wikipedia/en/b/bf/Rise_of_the_Ronin_Key_Art.jpg",
+                accountLink: "https://cuty.io/0ybD4Rhb",
+                category: "action-role playing"
+            },
+            {
+                id: 17,
+                title: "Wuthering Waves",
+                image: "https://cdn1.epicgames.com/spt-assets/c1586295960b46f88bbfeec32c199e0e/wuthering-waves-61yrf.jpg",
+                accountLink: "https://cuty.io/dmigqPJdsQsG",
+                category: "open world"
+            },
+            {
+                id: 18,
+                title: "Marvel Rivals",
+                image: "https://cdn1.epicgames.com/spt-assets/eb15454c010f4a748498cd3a62096a52/marvel-rivals-wq3mr.png",
+                accountLink: "https://cuty.io/rsOQJT0hh5XI",
+                category: "shooter"
+            },
+            {
+                id: 19,
+                title: "Life is Strange",
+                image: "https://upload.wikimedia.org/wikipedia/en/0/0d/Life_Is_Strange_cover_art.png",
+                accountLink: "https://cuty.io/Ka7peh",
+                category: "adventure"
+            },
+            {
+                id: 20,
+                title: "Mecha BREAK",
+                image: "https://upload.wikimedia.org/wikipedia/en/b/b6/Mecha_Break_cover.jpg",
+                accountLink: "https://cuty.io/5qxvnsCIvW",
+                category: "shooter"
+            },
+            {
+                id: 21,
+                title: "The First Descendant",
+                image: "https://image.api.playstation.com/vulcan/ap/rnd/202511/0607/532ca09b3dde0873d53d62fa04a7f289865121eff9c37a1a.png",
+                accountLink: "https://cuty.io/mNb696Q",
+                category: "shooter "
+            },
+            {
+                id: 22,
+                title: "World War 3",
+                image: "https://upload.wikimedia.org/wikipedia/en/0/02/World_War_3_cover_art.jpg",
+                accountLink: "https://cuty.io/J47LwagngATE",
+                category: "first-person shooter"
+            },
+            {
+                id: 23,
+                title: "Overwatch 2",
+                image: "https://upload.wikimedia.org/wikipedia/en/thumb/8/89/Overwatch_2_Steam_artwork.jpg/250px-Overwatch_2_Steam_artwork.jpg",
+                accountLink: "https://cuty.io/1rzxw",
+                category: "shooter"
+            },
+            {
+                id: 24,
+                title: "Once Human",
+                image: "https://cdn1.epicgames.com/spt-assets/36c309a879c547efa4b8cdd76955a5f0/once-human-1jg0b.jpg",
+                accountLink: "https://cuty.io/G0Xf5WO",
+                category: "open world"
+            },
+            {
+                id: 25,
+                title: "Guild Wars 2",
+                image: "https://m.media-amazon.com/images/M/MV5BNTFkNWRmNzAtMzc4Ni00ZjE2LWIzNGQtZmIxZWVlOWQ3NzJiXkEyXkFqcGc@._V1_.jpg",
+                accountLink: "https://cuty.io/S9yf4U",
+                category: "multiplayer"
+            },
+            {
+                id: 26,
+                title: "Farlight 84",
+                image: "https://m.media-amazon.com/images/M/MV5BYmQzZDc1ZTYtYjY2MC00YzUzLWEyN2UtZTY3ZjQ0NzA1ZWYzXkEyXkFqcGc@._V1_.jpg",
+                accountLink: "https://cuty.io/HhnLC4F8",
+                category: "shooter"
+            },
+            {
+                id: 27,
+                title: "Poppy Playtime",
+                image: "https://cdn1.epicgames.com/spt-assets/465c0f6c95d04b1c86b280b4925fee2d/poppy-playtime-14phl.jpg",
+                accountLink: "https://cuty.io/BzCWb0FdOGti",
+                category: "horror"
+            },
+            {
+                id: 28,
+                title: "Little Nightmares II",
+                image: "https://sm.ign.com/ign_in/cover/l/little-nig/little-nightmares-enhanced-edition_yysa.jpg",
+                accountLink: "https://cuty.io/RJMGShYiy",
+                category: "horror"
+            },
+            {
+                id: 29,
+                title: "Forza Horizon 5",
+                image: "https://image.api.playstation.com/vulcan/ap/rnd/202501/2717/42b3ee6b1b2094212231b0b0a82824f687fc5c4dc9bde31c.png",
+                accountLink: "https://cuty.io/3AJgJqqTmRk",
+                category: "racing"
+            },
+            {
+                id: 30,
+                title: "Shadow of the Tomb Raider",
+                image: "https://assets1.ignimgs.com/2018/04/27/shadow-of-the-tomb-raider---button-2a-1524790356997.jpg",
+                accountLink: "https://cuty.io/tSTf46",
+                category: "adventure"
+            }
+        ];
+
+        let currentFilter = 'all';
+        let pendingAccountLink = '';
+
+        // ========================================
+        // RENDER FUNCTIONS
+        // ========================================
+        
+        function renderGames(gamesToRender) {
+            const gamesGrid = document.getElementById('gamesGrid');
+            
+            if (gamesToRender.length === 0) {
+                gamesGrid.innerHTML = '<div class="no-results">😕 No games found. Try adjusting your filters or search.</div>';
+                return;
+            }
+
+            gamesGrid.innerHTML = gamesToRender.map(game => `
+                <div class="game-card fade-in">
+                    <div class="game-image-container">
+                        <img src="${game.image}" alt="${game.title}" class="game-image" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80'">
+                        <div class="game-badge">${game.badge}</div>
+                    </div>
+                    <div class="game-info">
+                        <div class="game-title">${game.title}</div>
+                        <div class="game-meta">
+                            <span class="meta-tag">🎮 ${game.category.toUpperCase()}</span>
+                            <span class="meta-tag">⚡ Instant Access</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="showInterstitialAd('${game.accountLink}', '${game.title}')">
+                            🎮 Get Account Now
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Trigger fade-in animations
+            observeElements();
+        }
+
+        // ========================================
+        // INTERSTITIAL AD FUNCTIONALITY
+        // ========================================
+        
+        function showInterstitialAd(accountLink, gameTitle) {
+            pendingAccountLink = accountLink;
+            const modal = document.getElementById('adModal');
+            const skipBtn = document.getElementById('skipBtn');
+            const countdown = document.getElementById('countdown');
+            
+            modal.classList.add('active');
+            skipBtn.classList.remove('show');
+            
+            let timeLeft = 5;
+            countdown.textContent = timeLeft;
+            
+            const timer = setInterval(() => {
+                timeLeft--;
+                countdown.textContent = timeLeft;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('skipTimer').style.display = 'none';
+                    skipBtn.classList.add('show');
+                }
+            }, 1000);
+        }
+
+        function closeAdAndProceed() {
+            const modal = document.getElementById('adModal');
+            modal.classList.remove('active');
+            
+            // Open the account link in new tab
+            if (pendingAccountLink) {
+                window.open(pendingAccountLink, '_blank');
+                pendingAccountLink = '';
+            }
+            
+            // Reset modal
+            document.getElementById('skipTimer').style.display = 'block';
+            document.getElementById('countdown').textContent = '5';
+        }
+
+        // ========================================
+        // SEARCH FUNCTIONALITY
+        // ========================================
+        
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            filterGames();
+        });
+
+        // ========================================
+        // FILTER FUNCTIONALITY
+        // ========================================
+        
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter;
+                filterGames();
+            });
+        });
+
+        function filterGames() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            let filtered = games;
+            
+            // Apply category filter
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(game => game.category === currentFilter);
+            }
+            
+            // Apply search filter
+            if (searchTerm) {
+                filtered = filtered.filter(game => 
+                    game.title.toLowerCase().includes(searchTerm) ||
+                    game.category.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            renderGames(filtered);
+        }
+
+        // ========================================
+        // SCROLL ANIMATIONS
+        // ========================================
+        
+        function observeElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // ========================================
+        // SMOOTH SCROLL
+        // ========================================
+        
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // ========================================
+        // INITIALIZE
+        // ========================================
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGames(games);
+            observeElements();
+        });
+
+        // Initial render (fallback)
+        renderGames(games);
+    </script>
+</body>
+</html>
